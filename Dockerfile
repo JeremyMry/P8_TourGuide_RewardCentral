@@ -1,5 +1,5 @@
 FROM openjdk:11
-RUN mkdir /app
-COPY ./out/artifacts/rewardCentral_jar/rewardCentral.jar /app/rewardCentral.jar
-WORKDIR /app
-CMD "java" "-jar" "rewardCentral.jar "
+WORKDIR /out/artifacts/rewardCentral_jar
+ADD rewardCentral.jar rewardCentral.jar
+EXPOSE 8083
+CMD java -jar rewardCentral.jar

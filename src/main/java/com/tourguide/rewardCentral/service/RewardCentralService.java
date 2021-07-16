@@ -23,8 +23,6 @@ public class RewardCentralService {
         }
         int randomInt = ThreadLocalRandom.current().nextInt(1, 1000);
 
-        logger.debug("test");
-
         return randomInt;
     }
 }
