@@ -1,5 +1,5 @@
 FROM openjdk:11
-WORKDIR /out/artifacts/rewardCentral_jar
-ADD rewardCentral.jar rewardCentral.jar
+WORKDIR /target
+ADD rewardCentral-0.0.1-SNAPSHOT.jar rewardCentral-0.0.1-SNAPSHOT.jar
 EXPOSE 8083
-CMD java -jar rewardCentral.jar
+CMD java -jar rewardCentral-0.0.1-SNAPSHOT.jar

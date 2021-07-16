@@ -12,6 +12,7 @@
 	<artifactId>rewardCentral</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>rewardCentral</name>
+	<packaging>jar</packaging>
 	<description>rewardCentral microservice for tourguide</description>
 	<properties>
 		<java.version>11</java.version>
@@ -27,13 +28,44 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-project-info-reports-plugin</artifactId>
+			<version>3.1.2</version>
+			<type>maven-plugin</type>
+		</dependency>
+
 	</dependencies>
 
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.7.1</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>3.1.2</version>
+			</plugin>
+			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+						<configuration>
+							<classifier>spring-boot</classifier>
+							<mainClass>
+								com.tourguide.rewardCentral.RewardCentralApplication
+							</mainClass>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
