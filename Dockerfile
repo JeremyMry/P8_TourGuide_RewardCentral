@@ -1,5 +1,5 @@
 FROM openjdk:11
-WORKDIR /target
-ADD rewardCentral-0.0.1-SNAPSHOT.jar rewardCentral-0.0.1-SNAPSHOT.jar
-EXPOSE 8083
-CMD java -jar rewardCentral-0.0.1-SNAPSHOT.jar
+RUN mkdir /app
+COPY ./target/rewardCentral-0.0.1-SNAPSHOT.jar /app/rewardCentral-0.0.1-SNAPSHOT.jar
+WORKDIR /app
+CMD "java" "-jar" "rewardCentral-0.0.1-SNAPSHOT.jar"
